@@ -1,101 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Nisha Patel | AI Engineer & Full Stack Developer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nisha Patel | AI Engineer | Full Stack Developer Canada</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ANIMATED BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background: radial-gradient(circle at 30% 40%, #1e3c72, transparent 40%),
+                radial-gradient(circle at 70% 60%, #2563eb, transparent 40%);
+    animation: moveBg 10s infinite alternate ease-in-out;
+    z-index:-1;
+}
+
+@keyframes moveBg{
+    0%{ transform: translate(0,0); }
+    100%{ transform: translate(-10%, -10%); }
+}
+
+/* HEADER */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+    font-weight:700;
+    background: linear-gradient(90deg,#60a5fa,#38bdf8,#6366f1);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    margin-top:20px;
+    font-size:1.3rem;
+    opacity:0.9;
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 28px;
+    border-radius:30px;
+    background:linear-gradient(90deg,#2563eb,#6366f1);
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+/* SECTIONS */
+section{
+    padding:80px 10%;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+/* GLASS CARD */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:15px;
+    margin-bottom:30px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.08);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* EXPERIENCE TIMELINE */
+.timeline{
+    border-left:3px solid #3b82f6;
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:40px;
+}
+
+.timeline-item h3{
+    color:#60a5fa;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    background:#020617;
+}
+
+/* FADE ANIMATION */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
 </head>
 <body>
 
 <header>
     <h1>Nisha Patel</h1>
-    <p>AI Engineer | Full Stack Developer | Cloud & DevOps</p>
-    <a href="mailto:patelnishaaideveloper@gmail.com" class="btn">Contact Me</a>
+    <p>AI Engineer | Full Stack Developer | Cloud & DevOps Specialist</p>
+    <a href="mailto:patelnishaaideveloper@gmail.com" class="btn">Hire Me in Canada</a>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        AI Engineer and Full Stack Developer with 6+ years of experience building scalable web applications 
-        and AI-driven systems across Japan, India, and Canada. 
-        Passionate about intelligent automation, cloud-native architecture, and production-ready AI integration.
-    </p>
+<section class="fade">
+<h2>Professional Summary</h2>
+<div class="card">
+<p>
+Full Stack Developer and AI Engineer with 6+ years of experience delivering scalable web platforms, AI-driven automation systems, and high-performance computing solutions across Japan, India, and Canada. 
+Expert in Python, React, Cloud Architecture, Computer Vision, NLP, and Production AI deployment.
+Passionate about building intelligent, secure, and optimized systems for modern businesses.
+</p>
+</div>
 </section>
 
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <div>
-            <h3>Frontend</h3>
-            <p>React, Angular, Vue, JavaScript, TypeScript, HTML, CSS</p>
-        </div>
-        <div>
-            <h3>Backend</h3>
-            <p>Python, Node.js, PHP, C#, FastAPI, Flask, REST APIs</p>
-        </div>
-        <div>
-            <h3>AI & ML</h3>
-            <p>TensorFlow, PyTorch, NLP, Computer Vision, CNN, Faster R-CNN</p>
-        </div>
-        <div>
-            <h3>DevOps & Cloud</h3>
-            <p>Docker, Kubernetes, Azure, AWS, GCP, CI/CD, GitHub Actions</p>
-        </div>
-    </div>
+<section class="fade">
+<h2>Core Expertise</h2>
+<div class="grid">
+<div class="card">
+<h3>Full Stack Development</h3>
+<p>React, Angular, Vue, Node.js, FastAPI, Flask, PHP, C#, REST APIs, Microservices</p>
+</div>
+<div class="card">
+<h3>Artificial Intelligence</h3>
+<p>Machine Learning, Deep Learning, NLP, Computer Vision, CNN, Faster R-CNN, KNN</p>
+</div>
+<div class="card">
+<h3>Cloud & DevOps</h3>
+<p>Azure, AWS, GCP, Docker, Kubernetes, CI/CD, GitHub Actions</p>
+</div>
+<div class="card">
+<h3>Databases</h3>
+<p>SQL Server, MySQL, MongoDB, Oracle</p>
+</div>
+</div>
 </section>
 
-<section id="experience">
-    <h2>Professional Experience</h2>
+<section class="fade">
+<h2>Professional Experience</h2>
 
-    <div class="job">
-        <h3>Full Stack Developer – Highreso Co., Ltd (Tokyo, Japan)</h3>
-        <p>2023 – 2025</p>
-        <ul>
-            <li>Improved system response time by 25% through performance optimization.</li>
-            <li>Reduced deployment time by 40% using Docker and CI/CD pipelines.</li>
-            <li>Integrated enterprise APIs and GPU infrastructure for AI workloads.</li>
-        </ul>
-    </div>
+<div class="timeline">
 
-    <div class="job">
-        <h3>AI Consultant – AI Infinity Co., Ltd (Tokyo, Japan)</h3>
-        <p>2022 – 2023</p>
-        <ul>
-            <li>Improved speech-to-text accuracy by 30% using NLP solutions.</li>
-            <li>Built AI-powered search engines for structured and unstructured data.</li>
-        </ul>
-    </div>
+<div class="timeline-item">
+<h3>Full Stack Developer – Highreso Co., Ltd (Tokyo, Japan)</h3>
+<p>2023 – 2025</p>
+<ul>
+<li>Improved system performance by 25% through optimization and structured logging.</li>
+<li>Reduced deployment time by 40% using Docker & automated CI/CD pipelines.</li>
+<li>Enhanced payment reliability by 20% integrating SBPS secure services.</li>
+<li>Contributed to GPU SOROBAN AI infrastructure services.</li>
+</ul>
+</div>
 
-    <div class="job">
-        <h3>AI Software Engineer – HCI Co., Ltd (Osaka, Japan)</h3>
-        <p>2021 – 2022</p>
-        <ul>
-            <li>Developed computer vision systems improving detection accuracy by 35%.</li>
-            <li>Implemented robotic AI automation reducing manual inspection by 40%.</li>
-        </ul>
-    </div>
+<div class="timeline-item">
+<h3>AI Consultant – AI Infinity Co., Ltd (Tokyo)</h3>
+<p>2022 – 2023</p>
+<ul>
+<li>Improved speech-to-text accuracy by 30% using NLP optimization.</li>
+<li>Built AI search engines increasing data retrieval efficiency by 35%.</li>
+<li>Enhanced conversational AI flow by 40%.</li>
+</ul>
+</div>
 
+<div class="timeline-item">
+<h3>AI Software Engineer – HCI Co., Ltd (Osaka)</h3>
+<p>2021 – 2022</p>
+<ul>
+<li>Improved object detection accuracy by 35% using CNN & Faster R-CNN.</li>
+<li>Reduced manual inspection by 40% via robotic AI automation.</li>
+<li>Implemented CUDA-based real-time defect detection systems.</li>
+</ul>
+</div>
+
+</div>
 </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <p>M.Sc. Computer Application – Veer Narmad South Gujarat University</p>
-    <p>B.Sc. Computer Application – Veer Narmad South Gujarat University</p>
+<section class="fade">
+<h2>Education & Certifications</h2>
+<div class="card">
+<p>M.Sc. Computer Application – Veer Narmad South Gujarat University</p>
+<p>B.Sc. Computer Application – Veer Narmad South Gujarat University</p>
+<p>JLPT-N2 | Robotics & Industrial Automation Certifications</p>
+</div>
 </section>
 
-<section id="contact">
-    <h2>Let's Connect</h2>
-    <p>Email: patelnishaaideveloper@gmail.com</p>
-    <p>Location: Guelph, Ontario, Canada</p>
-    <p>
-        <a href="https://github.com/yourusername">GitHub</a> |
-        <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-    </p>
+<section class="fade">
+<h2>Let's Connect</h2>
+<div class="card" style="text-align:center;">
+<p>Email: patelnishaaideveloper@gmail.com</p>
+<p>Location: Guelph, Ontario, Canada</p>
+<p>
+<a href="#">GitHub</a> | 
+<a href="#">LinkedIn</a>
+</p>
+</div>
 </section>
 
 <footer>
-    <p>© 2026 Nisha Patel | AI Engineer & Full Stack Developer</p>
+<p>© 2026 Nisha Patel | AI Engineer | Full Stack Developer | Canada</p>
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+const appearOptions = {
+    threshold:0.3
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries,observer){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting){
+            return;
+        }else{
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+},appearOptions);
+
+faders.forEach(fader=>{
+    appearOnScroll.observe(fader);
+});
+</script>
 
 </body>
 </html>
