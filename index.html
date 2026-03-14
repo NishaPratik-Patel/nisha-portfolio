@@ -1,278 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nisha Patel | AI Engineer | Full Stack Developer Canada</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Nisha Patel | AI Engineer | Full Stack Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
 
-/* GLOBAL */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:white;
-    overflow-x:hidden;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
 }
 
-/* ANIMATED BACKGROUND */
-body::before{
-    content:"";
-    position:fixed;
-    width:200%;
-    height:200%;
-    background: radial-gradient(circle at 30% 40%, #1e3c72, transparent 40%),
-                radial-gradient(circle at 70% 60%, #2563eb, transparent 40%);
-    animation: moveBg 10s infinite alternate ease-in-out;
-    z-index:-1;
+/* PARTICLE BACKGROUND */
+
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
-@keyframes moveBg{
-    0%{ transform: translate(0,0); }
-    100%{ transform: translate(-10%, -10%); }
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:18px 10%;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-/* HEADER */
-header{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
 }
 
-header h1{
-    font-size:3rem;
-    font-weight:700;
-    background: linear-gradient(90deg,#60a5fa,#38bdf8,#6366f1);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
 
-header p{
-    margin-top:20px;
-    font-size:1.3rem;
-    opacity:0.9;
+.hero h1{
+font-size:3.5rem;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+font-size:1.4rem;
+margin-top:10px;
+}
+
+.buttons{
+margin-top:30px;
 }
 
 .btn{
-    margin-top:30px;
-    padding:12px 28px;
-    border-radius:30px;
-    background:linear-gradient(90deg,#2563eb,#6366f1);
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-    transition:0.3s;
+padding:12px 30px;
+border-radius:30px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+margin:10px;
+display:inline-block;
+transition:0.3s;
 }
 
 .btn:hover{
-    transform:scale(1.1);
+transform:scale(1.1);
 }
 
-/* SECTIONS */
+/* SECTION */
+
 section{
-    padding:80px 10%;
+padding:80px 10%;
 }
 
 h2{
-    font-size:2rem;
-    margin-bottom:40px;
-    text-align:center;
+text-align:center;
+font-size:2.2rem;
+margin-bottom:40px;
 }
 
-/* GLASS CARD */
+/* CARD */
+
 .card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    padding:30px;
-    border-radius:15px;
-    margin-bottom:30px;
-    transition:0.4s;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:15px;
+transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    background:rgba(255,255,255,0.08);
+transform:translateY(-10px);
 }
 
 /* GRID */
+
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-/* EXPERIENCE TIMELINE */
-.timeline{
-    border-left:3px solid #3b82f6;
-    padding-left:30px;
+/* SKILLS */
+
+.skill-badge{
+display:inline-block;
+background:#1e293b;
+padding:8px 15px;
+border-radius:20px;
+margin:5px;
+font-size:14px;
 }
 
-.timeline-item{
-    margin-bottom:40px;
+/* PROJECT */
+
+.project-card{
+background:#020617;
+padding:25px;
+border-radius:15px;
+transition:0.4s;
 }
 
-.timeline-item h3{
-    color:#60a5fa;
+.project-card:hover{
+transform:translateY(-8px);
 }
 
 /* FOOTER */
+
 footer{
-    text-align:center;
-    padding:40px;
-    background:#020617;
-}
-
-/* FADE ANIMATION */
-.fade{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 1s ease;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
+text-align:center;
+padding:40px;
+background:#020617;
 }
 
 </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Nisha Patel</h1>
-    <p>AI Engineer | Full Stack Developer | Cloud & DevOps Specialist</p>
-    <a href="mailto:patelnishaaideveloper@gmail.com" class="btn">Hire Me in Canada</a>
-</header>
+<div id="particles-js"></div>
 
-<section class="fade">
-<h2>Professional Summary</h2>
-<div class="card">
-<p>
-Full Stack Developer and AI Engineer with 6+ years of experience delivering scalable web platforms, AI-driven automation systems, and high-performance computing solutions across Japan, India, and Canada. 
-Expert in Python, React, Cloud Architecture, Computer Vision, NLP, and Production AI deployment.
-Passionate about building intelligent, secure, and optimized systems for modern businesses.
-</p>
+<nav>
+<div><b>Nisha Patel</b></div>
+
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Nisha Patel</h1>
+
+<p><span id="typing"></span></p>
+
+<div class="buttons">
+
+<a href="mailto:patelnishaaideveloper@gmail.com" class="btn">
+Hire Me
+</a>
+
+<a href="#" class="btn">
+Download Resume
+</a>
+
+</div>
+
 </section>
 
-<section class="fade">
-<h2>Core Expertise</h2>
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="card">
+
+<p>
+
+AI Engineer and Full Stack Developer with 6+ years of experience building scalable AI systems, financial platforms, and cloud-based applications across Canada, Japan, and India.
+
+Specialized in Node.js, Python, React, Machine Learning, Docker, Kubernetes, and cloud infrastructure.
+
+Passionate about developing intelligent systems that improve automation, reliability, and business outcomes.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2>Tech Stack</h2>
+
+<div class="card">
+
+<span class="skill-badge">Python</span>
+<span class="skill-badge">Node.js</span>
+<span class="skill-badge">React</span>
+<span class="skill-badge">TensorFlow</span>
+<span class="skill-badge">PyTorch</span>
+<span class="skill-badge">Docker</span>
+<span class="skill-badge">Kubernetes</span>
+<span class="skill-badge">AWS</span>
+<span class="skill-badge">Azure</span>
+<span class="skill-badge">MongoDB</span>
+<span class="skill-badge">PostgreSQL</span>
+<span class="skill-badge">Computer Vision</span>
+<span class="skill-badge">NLP</span>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2>Featured Projects</h2>
+
 <div class="grid">
-<div class="card">
-<h3>Full Stack Development</h3>
-<p>React, Angular, Vue, Node.js, FastAPI, Flask, PHP, C#, REST APIs, Microservices</p>
-</div>
-<div class="card">
-<h3>Artificial Intelligence</h3>
-<p>Machine Learning, Deep Learning, NLP, Computer Vision, CNN, Faster R-CNN, KNN</p>
-</div>
-<div class="card">
-<h3>Cloud & DevOps</h3>
-<p>Azure, AWS, GCP, Docker, Kubernetes, CI/CD, GitHub Actions</p>
-</div>
-<div class="card">
-<h3>Databases</h3>
-<p>SQL Server, MySQL, MongoDB, Oracle</p>
-</div>
-</div>
-</section>
 
-<section class="fade">
-<h2>Professional Experience</h2>
+<div class="project-card">
 
-<div class="timeline">
+<h3>AI Speech Recognition System</h3>
 
-<div class="timeline-item">
-<h3>Full Stack Developer – Highreso Co., Ltd (Tokyo, Japan)</h3>
-<p>2023 – 2025</p>
-<ul>
-<li>Improved system performance by 25% through optimization and structured logging.</li>
-<li>Reduced deployment time by 40% using Docker & automated CI/CD pipelines.</li>
-<li>Enhanced payment reliability by 20% integrating SBPS secure services.</li>
-<li>Contributed to GPU SOROBAN AI infrastructure services.</li>
-</ul>
-</div>
-
-<div class="timeline-item">
-<h3>AI Consultant – AI Infinity Co., Ltd (Tokyo)</h3>
-<p>2022 – 2023</p>
-<ul>
-<li>Improved speech-to-text accuracy by 30% using NLP optimization.</li>
-<li>Built AI search engines increasing data retrieval efficiency by 35%.</li>
-<li>Enhanced conversational AI flow by 40%.</li>
-</ul>
-</div>
-
-<div class="timeline-item">
-<h3>AI Software Engineer – HCI Co., Ltd (Osaka)</h3>
-<p>2021 – 2022</p>
-<ul>
-<li>Improved object detection accuracy by 35% using CNN & Faster R-CNN.</li>
-<li>Reduced manual inspection by 40% via robotic AI automation.</li>
-<li>Implemented CUDA-based real-time defect detection systems.</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<section class="fade">
-<h2>Education & Certifications</h2>
-<div class="card">
-<p>M.Sc. Computer Application – Veer Narmad South Gujarat University</p>
-<p>B.Sc. Computer Application – Veer Narmad South Gujarat University</p>
-<p>JLPT-N2 | Robotics & Industrial Automation Certifications</p>
-</div>
-</section>
-
-<section class="fade">
-<h2>Let's Connect</h2>
-<div class="card" style="text-align:center;">
-<p>Email: patelnishaaideveloper@gmail.com</p>
-<p>Location: Guelph, Ontario, Canada</p>
 <p>
-<a href="#">GitHub</a> | 
-<a href="#">LinkedIn</a>
+
+Improved speech-to-text accuracy by 30% using NLP optimization and deep learning models.
+
 </p>
+
 </div>
+
+<div class="project-card">
+
+<h3>GPU Soroban AI Infrastructure</h3>
+
+<p>
+
+High-performance GPU infrastructure supporting large-scale AI workloads and computing environments.
+
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Financial Rewards Platform</h3>
+
+<p>
+
+Built scalable transaction systems using Node.js, React, PostgreSQL and MongoDB.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Let's Connect</h2>
+
+<div class="card">
+
+<p>Email: patelnishaaideveloper@gmail.com</p>
+
+<p>Phone: (519) 766-6802</p>
+
+<p>Location: Guelph, Ontario, Canada</p>
+
+<p>
+
+<a href="#">GitHub</a> |
+<a href="#">LinkedIn</a>
+
+</p>
+
+</div>
+
 </section>
 
 <footer>
-<p>© 2026 Nisha Patel | AI Engineer | Full Stack Developer | Canada</p>
+
+<p>© 2026 Nisha Patel | AI Engineer</p>
+
 </footer>
 
 <script>
-const faders = document.querySelectorAll('.fade');
-const appearOptions = {
-    threshold:0.3
-};
 
-const appearOnScroll = new IntersectionObserver(function(entries,observer){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting){
-            return;
-        }else{
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-        }
-    });
-},appearOptions);
+/* TYPING ANIMATION */
 
-faders.forEach(fader=>{
-    appearOnScroll.observe(fader);
+const words=["AI Engineer","Full Stack Developer","Machine Learning Engineer","Cloud Specialist"];
+
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
+
+function type(){
+
+current=words[i];
+
+document.getElementById("typing").textContent=current.substring(0,j);
+
+if(!isDeleting){
+
+j++;
+
+if(j==current.length+1){
+
+isDeleting=true;
+setTimeout(type,1500);
+return;
+
+}
+
+}
+
+else{
+
+j--;
+
+if(j==0){
+
+isDeleting=false;
+i++;
+
+if(i==words.length){
+
+i=0;
+
+}
+
+}
+
+}
+
+setTimeout(type,100);
+
+}
+
+type();
+
+/* PARTICLES */
+
+particlesJS("particles-js",{
+
+particles:{
+
+number:{value:60},
+
+size:{value:3},
+
+move:{speed:2},
+
+line_linked:{enable:true}
+
+}
+
 });
+
 </script>
 
 </body>
