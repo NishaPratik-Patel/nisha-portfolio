@@ -3,89 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nisha Patel | AI Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<!-- Particles -->
+<title>Nisha Patel | AI Engineer | Full Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
 body{
-  background: radial-gradient(circle at top,#0f172a,#020617);
+  background:#0f172a;
   color:white;
   overflow-x:hidden;
 }
-
-/* PARTICLES */
 #particles-js{
-  position:fixed;width:100%;height:100%;z-index:-1;
-}
-
-/* CURSOR */
-.cursor{
-  width:20px;height:20px;
-  background:#38bdf8;
-  border-radius:50%;
   position:fixed;
-  pointer-events:none;
-  filter:blur(10px);
-  z-index:9999;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
-
-/* NAV */
+/* NAVBAR */
 nav{
-  position:fixed;top:0;width:100%;
-  display:flex;justify-content:space-between;
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
   padding:18px 10%;
   background:rgba(0,0,0,0.4);
   backdrop-filter:blur(10px);
   z-index:1000;
 }
-nav a{color:white;margin-left:25px;text-decoration:none}
-
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-weight:500;
+}
 /* HERO */
 .hero{
-  height:100vh;display:flex;
+  height:100vh;
+  display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
 }
-.hero h1{font-size:3.5rem}
-.hero span{color:#38bdf8}
-
-/* BUTTON */
+.hero h1{
+  font-size:3.5rem;
+}
+.hero span{
+  color:#38bdf8;
+}
+.hero p{
+  font-size:1.4rem;
+  margin-top:10px;
+}
+.buttons{
+  margin-top:30px;
+}
 .btn{
   padding:12px 30px;
   border-radius:30px;
   background:#2563eb;
   color:white;
   text-decoration:none;
-  margin-top:20px;
+  margin:10px;
   display:inline-block;
-  transition:.3s;
+  transition:0.3s;
 }
-.btn:hover{transform:scale(1.1)}
-
+.btn:hover{
+  transform:scale(1.1);
+}
 /* SECTION */
-section{padding:80px 10%}
-h2{text-align:center;margin-bottom:30px}
-
+section{
+  padding:80px 10%;
+}
+h2{
+  text-align:center;
+  font-size:2.2rem;
+  margin-bottom:40px;
+}
 /* CARD */
 .card{
   background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
   padding:30px;
-  border-radius:20px;
-  backdrop-filter:blur(20px);
-  margin-bottom:20px;
+  border-radius:15px;
 }
-
+.card h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
 /* SKILLS */
 .skill-badge{
   display:inline-block;
@@ -93,44 +106,71 @@ h2{text-align:center;margin-bottom:30px}
   padding:8px 15px;
   border-radius:20px;
   margin:5px;
+  font-size:14px;
 }
-
-/* GRID */
+/* PROJECTS */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+  gap:25px;
 }
-
-/* PROJECT */
 .project-card{
   background:rgba(255,255,255,0.05);
   padding:25px;
-  border-radius:20px;
-  transition:.4s;
+  border-radius:15px;
+  transition:0.4s;
 }
 .project-card:hover{
-  transform:translateY(-12px) scale(1.02);
-  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+  transform:translateY(-10px);
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
 }
-
-.full-text{display:none;color:#aaa}
-
+.project-card h3{
+  color:#38bdf8;
+  margin-bottom:10px;
+}
+.tech-badge{
+  display:inline-block;
+  background:#1e293b;
+  padding:6px 12px;
+  border-radius:20px;
+  margin:5px 5px 0 0;
+  font-size:12px;
+}
+.project-buttons{
+  margin-top:15px;
+}
+.project-buttons a{
+  text-decoration:none;
+  background:#2563eb;
+  padding:8px 15px;
+  border-radius:20px;
+  margin-right:10px;
+  font-size:12px;
+  color:white;
+  cursor:pointer;
+}
+/* CONTACT */
+.contact{
+  text-align:center;
+}
 /* FOOTER */
-footer{text-align:center;padding:40px;background:#020617}
+footer{
+  text-align:center;
+  padding:40px;
+  background:#020617;
+}
 </style>
 </head>
 
 <body>
-
 <div id="particles-js"></div>
-<div class="cursor"></div>
 
 <nav>
   <div><b>Nisha Patel</b></div>
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
@@ -140,50 +180,251 @@ footer{text-align:center;padding:40px;background:#020617}
 <section class="hero">
   <h1>Nisha Patel</h1>
   <p><span id="typing"></span></p>
-  <a href="mailto:patelnishaaideveloper@gmail.com" class="btn">Hire Me</a>
+  <div class="buttons">
+    <a href="mailto:patelnishaaideveloper@gmail.com" class="btn">Hire Me</a>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<h2 class="reveal">About Me</h2>
-<div class="card reveal">
+<h2>About Me</h2>
+<div class="card">
 <p>
-AI Engineer and Full Stack Developer with 6+ years experience building scalable AI systems and applications across Canada, Japan, and India.
+I am an AI Engineer and Full Stack Developer with 6+ years of experience designing, building, and deploying scalable AI-driven systems and enterprise applications across Canada, Japan, and India. I specialize in creating high-performance web and mobile applications, developing production-ready machine learning models, and integrating secure, cloud-based solutions.  
+
+My expertise spans Python, Node.js, React, Machine Learning, Deep Learning, NLP, Computer Vision, Docker, Kubernetes, and cloud platforms like AWS, GCP, and Azure. I have successfully improved system performance by up to 40%, enhanced payment reliability, and delivered AI models with measurable accuracy gains in real-world environments.  
+
+Passionate about solving complex problems, I focus on building intelligent, optimized, and secure systems that drive tangible business impact. I thrive in cross-functional teams, embrace Agile practices, and continuously leverage emerging technologies to innovate and deliver results efficiently.
 </p>
 </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2 class="reveal">Tech Stack</h2>
-<div class="card reveal">
+<h2>Tech Stack</h2>
+<div class="grid">
+<div class="card">
+<h3>Frontend</h3>
+<span class="skill-badge">HTML</span>
+<span class="skill-badge">CSS</span>
+<span class="skill-badge">TailwindCSS</span>
+<span class="skill-badge">Responsive UI</span>
+<span class="skill-badge">Angular</span>
 <span class="skill-badge">React</span>
+<span class="skill-badge">Vue.js</span>
+<span class="skill-badge">Android</span>
+<span class="skill-badge">Flutter</span>
+</div>
+<div class="card">
+<h3>Backend & Frameworks</h3>
+<span class="skill-badge">JavaScript</span>
+<span class="skill-badge">TypeScript</span>
 <span class="skill-badge">Node.js</span>
+<span class="skill-badge">Express.js</span>
 <span class="skill-badge">Python</span>
+<span class="skill-badge">Java</span>
+<span class="skill-badge">Spring Boot</span>
+<span class="skill-badge">Spring Framework</span>
+<span class="skill-badge">PHP</span>
+<span class="skill-badge">C#</span>
+<span class="skill-badge">ASP.NET</span>
+<span class="skill-badge">CakePHP</span>
+<span class="skill-badge">Flask</span>
+<span class="skill-badge">FastAPI</span>
+<span class="skill-badge">REST APIs</span>
+</div>
+<div class="card">
+<h3>AI & Machine Learning</h3>
+<span class="skill-badge">Machine Learning</span>
+<span class="skill-badge">Deep Learning</span>
+<span class="skill-badge">NLP</span>
+<span class="skill-badge">Computer Vision</span>
+<span class="skill-badge">CNN</span>
+<span class="skill-badge">KNN</span>
+<span class="skill-badge">Faster R-CNN</span>
 <span class="skill-badge">TensorFlow</span>
+<span class="skill-badge">Keras</span>
+<span class="skill-badge">PyTorch</span>
+<span class="skill-badge">OpenCV</span>
+</div>
+<div class="card">
+<h3>Databases</h3>
+<span class="skill-badge">PostgreSQL</span>
+<span class="skill-badge">SQL Server</span>
+<span class="skill-badge">MySQL</span>
+<span class="skill-badge">MariaDB</span>
+<span class="skill-badge">MongoDB</span>
+<span class="skill-badge">Oracle</span>
+</div>
+<div class="card">
+<h3>DevOps & Cloud</h3>
 <span class="skill-badge">Docker</span>
+<span class="skill-badge">Kubernetes</span>
+<span class="skill-badge">CI/CD</span>
+<span class="skill-badge">GitHub Actions</span>
+<span class="skill-badge">Azure</span>
 <span class="skill-badge">AWS</span>
+<span class="skill-badge">GCP</span>
+<span class="skill-badge">JWT Auth</span>
+<span class="skill-badge">OAuth 2.0</span>
+<span class="skill-badge">OpenID Connect</span>
+<span class="skill-badge">RBAC</span>
+<span class="skill-badge">Application Insights</span>
+</div>
+<div class="card">
+<h3>Tools & Platforms</h3>
+<span class="skill-badge">Jira</span>
+<span class="skill-badge">Confluence</span>
+<span class="skill-badge">GitHub</span>
+<span class="skill-badge">GitLab</span>
+<span class="skill-badge">Linux (Ubuntu)</span>
+<span class="skill-badge">Windows</span>
+</div>
+<div class="card">
+<h3>Testing & QA</h3>
+<span class="skill-badge">PHPUnit</span>
+<span class="skill-badge">NUnit</span>
+<span class="skill-badge">JUnit</span>
+<span class="skill-badge">Postman</span>
+<span class="skill-badge">Google API Tester</span>
+<span class="skill-badge">OWASP ZAP</span>
+<span class="skill-badge">Integration Testing</span>
+</div>
+<div class="card">
+<h3>Transferable Skills</h3>
+<span class="skill-badge">Cross-functional Communication</span>
+<span class="skill-badge">Technical Documentation</span>
+<span class="skill-badge">Problem Solving</span>
+<span class="skill-badge">Mentoring</span>
+</div>
+</div>
+</section>
+
+<!-- EDUCATION & CERTIFICATIONS -->
+<section id="education">
+<h2>Education & Certifications</h2>
+<div class="grid">
+<div class="card">
+<h3>Certifications</h3>
+<ul>
+<li>PUDU Robotic Certification</li>
+<li>Industrial Robot Training (HCI-RT)</li>
+<li>NAT-Q2 (JLPT-N2)</li>
+<li>JLPT-N3</li>
+</ul>
+</div>
+<div class="card">
+<h3>Education</h3>
+<ul>
+<li>First Study Japanese Language School, Osaka, Japan — Japanese Language (2019–2022)</li>
+<li>Veer Narmad South Gujarat University, Gujarat, India — Master of Science in Computer Application (2015–2017)</li>
+<li>Veer Narmad South Gujarat University, Gujarat, India — Bachelor of Science in Computer Application (2012–2015)</li>
+</ul>
+</div>
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2 class="reveal">Projects</h2>
-
+<h2>AI & Software Projects</h2>
 <div class="grid">
 
-<div class="project-card reveal">
-<h3>Smart Library Navigation</h3>
-<p class="short-text">Robot navigation system.</p>
-<p class="full-text">Built using Python, OpenCV, Flask.</p>
-<a href="#" class="read-more">Read More</a>
+<!-- Smart Library Navigation -->
+<div class="project-card">
+<h3>Smart Library Navigation System</h3>
+<p class="short-text">
+Developed an intelligent system guiding customers to bookshelves using a Pudu service robot, barcode scanning, and computer vision. Reduced book search time and improved user experience.
+</p>
+<p class="full-text" style="display:none;">
+In large libraries, customers often struggled to find books due to many shelves and limited staff assistance. I created a navigation map using the Pudu robot, mapping the library and assigning precise shelf numbers so the robot stops exactly at each shelf. Built a webcam-based application using Python, OpenCV, and Flask. Customers search for a book, get a barcode receipt, and the robot navigates them to the correct location. The system significantly improved user experience and demonstrated effective integration of computer vision, robotics, and web technologies.
+</p>
+<span class="tech-badge">Python</span>
+<span class="tech-badge">OpenCV</span>
+<span class="tech-badge">Flask</span>
+<span class="tech-badge">Robotics API</span>
+<div class="project-buttons"><a href="#" class="read-more">Read More</a></div>
 </div>
 
-<div class="project-card reveal">
+<!-- Wire Damage Detection -->
+<div class="project-card">
 <h3>Wire Damage Detection</h3>
-<p class="short-text">AI defect detection.</p>
-<p class="full-text">TensorFlow + multi camera system.</p>
-<a href="#" class="read-more">Read More</a>
+<p class="short-text">
+Real-time computer vision system detecting wire defects with multiple camera feeds and deep learning.
+</p>
+<p class="full-text" style="display:none;">
+In manufacturing, detecting wire defects during bobbin winding was challenging due to inconsistent visual inspection and variable lighting. Developed a system with Python, OpenCV, Flask, TensorFlow, and Keras. Streams four webcam feeds, performs real-time defect detection, and triggers alerts to stop the robot or notify the operator. Improved defect detection accuracy and reduced reliance on manual inspection.
+</p>
+<span class="tech-badge">Python</span>
+<span class="tech-badge">OpenCV</span>
+<span class="tech-badge">TensorFlow</span>
+<span class="tech-badge">Keras</span>
+<span class="tech-badge">Flask</span>
+<div class="project-buttons"><a href="#" class="read-more">Read More</a></div>
+</div>
+
+<!-- AI Question Answering Engine -->
+<div class="project-card">
+<h3>AI Question Answering Engine</h3>
+<p class="short-text">
+Semantic search engine using BERT NLP that returns the most relevant answers quickly.
+</p>
+<p class="full-text" style="display:none;">
+Users often spent too much time searching manually through documents and websites, and keyword-based search frequently returned irrelevant results. Developed an intelligent semantic search engine using BERT NLP and C# .NET. Converts user questions into embeddings, compares with document embeddings, ranks results, and returns top 5 answers with links. Improved search time, accuracy, and user experience.
+</p>
+<span class="tech-badge">BERT NLP</span>
+<span class="tech-badge">Machine Learning</span>
+<span class="tech-badge">C# .NET</span>
+<div class="project-buttons"><a href="#" class="read-more">Read More</a></div>
+</div>
+
+<!-- AI Meeting Transcription -->
+<div class="project-card">
+<h3>AI Meeting Transcription System</h3>
+<p class="short-text">
+Speaker separation and automatic transcription for meetings using AI.
+</p>
+<p class="full-text" style="display:none;">
+In many meetings, tracking who said what was difficult, and manual transcripts were time-consuming. Developed an AI system using speaker diarization to separate speakers and speech recognition for transcription, displayed in a chat-style interface. Automated meeting transcription, reduced manual note-taking, and improved clarity for teams.
+</p>
+<span class="tech-badge">Speech Recognition</span>
+<span class="tech-badge">Speaker Diarization</span>
+<span class="tech-badge">Python</span>
+<div class="project-buttons"><a href="#" class="read-more">Read More</a></div>
+</div>
+
+<!-- AI Voice Diary -->
+<div class="project-card">
+<h3>AI Voice Diary</h3>
+<p class="short-text">
+Voice-to-text diary recording system enabling hands-free note-taking.
+</p>
+<p class="full-text" style="display:none;">
+Many people want to maintain a diary but often lack time for regular writing, and manual entry can be slow. Developed a voice-based diary application that captures voice input and converts to text automatically. Stored digitally for anytime access, enhancing convenience and reducing effort.
+</p>
+<span class="tech-badge">Speech Recognition</span>
+<span class="tech-badge">Python</span>
+<span class="tech-badge">Flask</span>
+<div class="project-buttons"><a href="#" class="read-more">Read More</a></div>
+</div>
+
+<!-- RewardsX Mobile App -->
+<div class="project-card">
+<h3>Financial Rewards Platform (RewardsX Mobile App)</h3>
+<p class="short-text">
+Mobile app for banks and credit cards (Visa, MasterCard, Amex) showing nearby reward stores and managing points.
+</p>
+<p class="full-text" style="display:none;">
+Developed the RewardsX mobile application, a scalable loyalty platform for multiple banks and credit card types (Visa, MasterCard, Amex). Shows nearby cafes, restaurants, travel, and flight rewards with maps and point tracking. Built backend using Node.js, Express.js, MongoDB, PostgreSQL, and frontend with React & Flutter. Integrated GCP and Firebase for scalability and authentication. Improved user engagement and reward management reliability.
+</p>
+<span class="tech-badge">Node.js</span>
+<span class="tech-badge">Express.js</span>
+<span class="tech-badge">React</span>
+<span class="tech-badge">Flutter</span>
+<span class="tech-badge">MongoDB</span>
+<span class="tech-badge">PostgreSQL</span>
+<span class="tech-badge">GCP</span>
+<span class="tech-badge">Firebase</span>
+<div class="project-buttons"><a href="#" class="read-more">Read More</a></div>
 </div>
 
 </div>
@@ -191,66 +432,58 @@ AI Engineer and Full Stack Developer with 6+ years experience building scalable 
 
 <!-- CONTACT -->
 <section id="contact">
-<h2 class="reveal">Contact</h2>
-<div class="card reveal">
+<h2>Let's Connect</h2>
+<div class="card contact">
 <p>Email: patelnishaaideveloper@gmail.com</p>
-<p>Guelph, Canada</p>
+<p>Location: Guelph, Ontario, Canada</p>
+<p><a href="https://www.linkedin.com/in/nishapatel3112/">LinkedIn</a></p>
 </div>
 </section>
 
 <footer>
-© 2026 Nisha Patel
+<p>© 2026 Nisha Patel | AI Engineer</p>
 </footer>
 
 <script>
-// Typing
-const words=["AI Engineer","Full Stack Developer","ML Engineer"];
-let i=0,j=0,isDeleting=false;
-
+// Typing Effect
+const words=["AI Engineer","Full Stack Developer","Machine Learning Engineer"];
+let i=0,j=0,current="",isDeleting=false;
 function type(){
-  let word=words[i];
-  document.getElementById("typing").textContent=word.substring(0,j);
+  current=words[i];
+  document.getElementById("typing").textContent=current.substring(0,j);
   if(!isDeleting){
     j++;
-    if(j===word.length){isDeleting=true;setTimeout(type,1000);return;}
+    if(j==current.length+1){isDeleting=true;setTimeout(type,1500);return;}
   } else {
     j--;
-    if(j===0){isDeleting=false;i=(i+1)%words.length;}
+    if(j==0){isDeleting=false;i++;if(i==words.length){i=0;}}
   }
-  setTimeout(type,80);
+  setTimeout(type,100);
 }
 type();
 
-// Particles
-particlesJS("particles-js",{particles:{number:{value:60}}});
+// Particles.js
+particlesJS("particles-js",{
+  particles:{number:{value:60},size:{value:3},move:{speed:2},line_linked:{enable:true}}
+});
 
-// Read More
+// Read More / Less
 document.querySelectorAll('.read-more').forEach(btn=>{
-btn.addEventListener('click',e=>{
-e.preventDefault();
-let card=btn.parentElement;
-let full=card.querySelector('.full-text');
-let short=card.querySelector('.short-text');
-
-if(full.style.display==="block"){
-full.style.display="none";short.style.display="block";btn.innerText="Read More";
-}else{
-full.style.display="block";short.style.display="none";btn.innerText="Read Less";
-}
-});
-});
-
-// GSAP
-gsap.registerPlugin(ScrollTrigger);
-gsap.utils.toArray(".reveal").forEach(el=>{
-gsap.from(el,{opacity:0,y:50,duration:1,scrollTrigger:{trigger:el,start:"top 85%"}});
-});
-
-// Cursor
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    const card=btn.closest('.project-card');
+    const fullText=card.querySelector('.full-text');
+    const shortText=card.querySelector('.short-text');
+    if(fullText.style.display==='none'){
+      fullText.style.display='block';
+      shortText.style.display='none';
+      btn.textContent='Read Less';
+    } else {
+      fullText.style.display='none';
+      shortText.style.display='block';
+      btn.textContent='Read More';
+    }
+  });
 });
 </script>
 
