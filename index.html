@@ -3,16 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nisha Patel | Portfolio</title>
+<title>Nisha Patel | AI Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
-body{background:#020617;color:white;overflow-x:hidden}
+body{
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* CURSOR GLOW */
+.cursor{
+  width:20px;height:20px;
+  background:#38bdf8;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  filter:blur(10px);
+  z-index:9999;
+}
 
 /* NAV */
 nav{
@@ -20,7 +36,7 @@ nav{
   display:flex;justify-content:space-between;
   padding:20px 10%;
   background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(10px);
   z-index:1000;
 }
 nav a{margin-left:20px;color:white;text-decoration:none}
@@ -34,7 +50,7 @@ nav a{margin-left:20px;color:white;text-decoration:none}
   text-align:center;
 }
 .hero h1{font-size:4rem}
-.hero p{color:#38bdf8;margin-top:10px}
+.hero span{color:#38bdf8}
 
 /* BUTTON */
 .btn{
@@ -51,7 +67,7 @@ nav a{margin-left:20px;color:white;text-decoration:none}
 /* SECTION */
 section{padding:100px 10%}
 
-/* GLASS CARD */
+/* CARD */
 .card{
   background:rgba(255,255,255,0.05);
   padding:30px;
@@ -60,7 +76,7 @@ section{padding:100px 10%}
   margin-bottom:20px;
 }
 
-/* PROJECT GRID */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -73,9 +89,9 @@ section{padding:100px 10%}
   border-radius:20px;
   transition:.4s;
 }
-.project:hover{
-  transform:translateY(-10px) scale(1.02);
-}
+.project:hover{transform:translateY(-10px)}
+
+.full{display:none;color:#aaa;margin-top:10px}
 
 /* FOOTER */
 footer{text-align:center;padding:40px;color:#aaa}
@@ -83,6 +99,8 @@ footer{text-align:center;padding:40px;color:#aaa}
 </head>
 
 <body>
+
+<div class="cursor"></div>
 
 <nav>
   <h3>Nisha Patel</h3>
@@ -95,41 +113,46 @@ footer{text-align:center;padding:40px;color:#aaa}
 
 <!-- HERO -->
 <section class="hero">
-  <h1 class="animate">Nisha Patel</h1>
-  <p class="animate">AI Engineer • Full Stack Developer</p>
-  <a href="#" class="btn animate">Hire Me</a>
+  <h1>Nisha Patel</h1>
+  <p><span id="typing"></span></p>
+  <a href="mailto:patelnishaaideveloper@gmail.com" class="btn">Hire Me</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="card animate">
+  <div class="card reveal">
     <h2>About Me</h2>
     <p>
-      AI Engineer with 6+ years experience building scalable applications,
-      machine learning systems, and cloud solutions.
+      AI Engineer with 6+ years of experience building scalable systems, ML models, and cloud solutions across Canada, Japan, and India.
     </p>
   </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2 class="animate">Projects</h2>
+  <h2 class="reveal">Projects</h2>
 
   <div class="grid">
 
-    <div class="project animate">
+    <div class="project reveal">
       <h3>Smart Library Navigation</h3>
-      <p>Robot + Computer Vision system for navigation.</p>
+      <p>Robot + computer vision system.</p>
+      <p class="full">Built using Python, OpenCV, Flask with real-time navigation.</p>
+      <button onclick="toggle(this)">Read More</button>
     </div>
 
-    <div class="project animate">
+    <div class="project reveal">
       <h3>Wire Damage Detection</h3>
-      <p>Real-time defect detection using AI.</p>
+      <p>AI-based defect detection system.</p>
+      <p class="full">Used TensorFlow and multiple camera feeds for accuracy.</p>
+      <button onclick="toggle(this)">Read More</button>
     </div>
 
-    <div class="project animate">
+    <div class="project reveal">
       <h3>AI Q&A Engine</h3>
-      <p>Semantic search using BERT NLP.</p>
+      <p>Semantic search system.</p>
+      <p class="full">Built using BERT NLP for fast and accurate answers.</p>
+      <button onclick="toggle(this)">Read More</button>
     </div>
 
   </div>
@@ -137,7 +160,7 @@ footer{text-align:center;padding:40px;color:#aaa}
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="card animate">
+  <div class="card reveal">
     <h2>Contact</h2>
     <p>Email: patelnishaaideveloper@gmail.com</p>
   </div>
@@ -148,13 +171,65 @@ footer{text-align:center;padding:40px;color:#aaa}
 </footer>
 
 <script>
-// GSAP Animations
-gsap.from(".animate",{
-  opacity:0,
-  y:50,
-  duration:1,
-  stagger:0.2
+/* GSAP Scroll Animation */
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".reveal").forEach(el=>{
+  gsap.from(el,{
+    opacity:0,
+    y:50,
+    duration:1,
+    scrollTrigger:{
+      trigger:el,
+      start:"top 80%"
+    }
+  });
 });
+
+/* Typing Effect */
+const words=["AI Engineer","Full Stack Developer","ML Engineer"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type(){
+  current=words[i];
+  document.getElementById("typing").textContent=current.substring(0,j);
+
+  if(!isDeleting){
+    j++;
+    if(j===current.length+1){
+      isDeleting=true;
+      setTimeout(type,1000);
+      return;
+    }
+  } else {
+    j--;
+    if(j===0){
+      isDeleting=false;
+      i=(i+1)%words.length;
+    }
+  }
+  setTimeout(type,80);
+}
+type();
+
+/* Cursor Glow */
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+  cursor.style.top=e.clientY+"px";
+  cursor.style.left=e.clientX+"px";
+});
+
+/* Read More */
+function toggle(btn){
+  const full=btn.previousElementSibling;
+  if(full.style.display==="block"){
+    full.style.display="none";
+    btn.innerText="Read More";
+  } else {
+    full.style.display="block";
+    btn.innerText="Read Less";
+  }
+}
 </script>
 
 </body>
