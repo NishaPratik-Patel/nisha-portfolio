@@ -430,7 +430,7 @@ section { padding: 100px 8%; }
 .skills-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; }
 .skill-categories {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2px;
   background: rgba(255,255,255,0.06);
   border-radius: 20px;
@@ -801,9 +801,11 @@ img { display: block; }
   .hero { grid-template-columns: 1fr; padding: 120px 6% 80px; }
   .hero-right { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .skill-categories { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr 1fr; }
   .edu-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 1100px) {
+  .skill-categories { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .projects-grid { grid-template-columns: 1fr; }
